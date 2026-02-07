@@ -1,0 +1,1 @@
+LOGFIRE_TOKEN=pylf_v1_us_P12yqzsCDCdZRbvnvjlxc2Kr6Y48HjH9LJ12MDvXVvmb

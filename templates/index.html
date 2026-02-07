@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Orchestrator</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        textarea { width: 100%; height: 80px; }
+        select, button { margin-top: 10px; padding: 5px; }
+        .history { margin-top: 20px; border-top: 1px solid #ccc; padding-top: 10px; }
+        .entry { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+<h1>AI Orchestrator</h1>
+<form method="POST">
+    <textarea name="user_input" placeholder="Напиши задачу..."></textarea><br>
+    <select name="task_type">
+        <option value="code">Код</option>
+        <option value="creative">Творчество</option>
+        <option value="search">Поиск</option>
+    </select><br>
+    <button type="submit">Запустить</button>
+</form>
+
+{% if output %}
+<h2>Результат:</h2>
+<p>{{ output }}</p>
+{% endif %}
+
+<div class="history">
+<h3>История:</h3>
+{% for h in history %}
+    <div class="entry">
+        <b>{{ h.agent }}</b>: {{ h.output }}
+    </div>
+{% endfor %}
+</div>
+</body>
+</html>
+
